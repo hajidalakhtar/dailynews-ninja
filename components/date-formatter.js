@@ -1,6 +1,6 @@
 import { parseISO, format } from 'date-fns'
+import ReactTimeAgo from 'react-time-ago'
 
 export default function DateFormatter({ dateString }) {
-  const date = parseISO(dateString)
-  return <time dateTime={dateString}>{format(date, 'LLLL	d, yyyy')}</time>
+  return  <ReactTimeAgo date={dateString} />
 }
