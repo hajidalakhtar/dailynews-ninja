@@ -23,6 +23,7 @@ export default function Index() {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const [loading, setLoading] = useState(true)
     const [isLoginOpen, setIsLoginOpen] = useState(false);
+    const [isRegisterOpen, setIsRegisterOpen] = useState(false);
  
   const togglePopup = () => {
     setIsLoginOpen(!isLoginOpen);
@@ -56,18 +57,23 @@ export default function Index() {
 
    async  function fetchMoreData()  {
     let data = await getAllPosts(page)
+    // console.log(data)
     const newData = [...item, ...data];
     setItem(newData);
     setPage(page + 1)
-
-    //console.log(newData)
-    // setTimeout(() => {
-      // setItem(newData);
-    // }, 2000);
   }
 
  async function postLogin () {
  
+   let login = await useAuthLogin("hajidalakhtar@gmail.com","akurapopo1502")
+    setUser(login[0])
+    setIsLoginOpen(!isLoginOpen);
+
+  }
+
+
+
+ async function postLogin () {
    let login = await useAuthLogin("hajidalakhtar@gmail.com","akurapopo1502")
     setUser(login[0])
     setIsLoginOpen(!isLoginOpen);
@@ -104,7 +110,7 @@ export default function Index() {
         )}
       >
         {item.map((data,i) => (
-          <Card title={data.title} thumbnail={data.thumnail} created_at={data.created_at} link={data.link} categories={data.categories}  />
+          <Card title={data.title} thumbnail={data.thumnail} created_at={data.created_at} link={data.link} content={data.content} categories={data.categories}  />
           ))}
 
       </InfiniteScroll>

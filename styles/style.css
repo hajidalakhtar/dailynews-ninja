@@ -38,6 +38,9 @@ body {
 }
 
 .card-img img {
+    
+
+
     border-radius: 5%;
     padding: 0px;
     width: 100%;
@@ -46,10 +49,11 @@ body {
 }
 
 .card-img {
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-start; */
+     position: relative;
     padding: 11px;
 }
 
@@ -63,7 +67,7 @@ body {
 
 .card-body h4 {
     color: #ffff;
-    margin-bottom: 0px;
+    margin-bottom: -7px;
 
 }
 
@@ -121,7 +125,6 @@ body {
 
 .user-info small {
     padding-top: 0px;
-
     color: #545d7a;
 }
 
@@ -142,3 +145,11 @@ body {
 .my-float {
     margin-top: 22px;
 }
+#contentx p {
+    margin-top: 15px;
+}
+
+#contentx a {
+    text-decoration: underline;
+}
+
